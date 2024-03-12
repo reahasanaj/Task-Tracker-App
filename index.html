@@ -1,29 +1,72 @@
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Task Tracker</title>
+    <title>Task Manager</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Task Tracker</h1>
+        <h1>Task Manager</h1>
         <form id="taskForm">
             <label for="taskName">Task Name:</label>
-<input type="text" id="taskName" name="taskName">
-<label for="taskDescription">Task Description:</label>
-<textarea id="taskDescription" name="taskDescription"></textarea>
-<label for="taskDeadline">Task Deadline:</label>
-<input type="date" id="taskDeadline" name="taskDeadline">
-
+            <input type="text" id="taskName" name="taskName"><br>
             
-            <button type="submit">Add Task</button>
+            <label for="taskDescription">Task Description:</label>
+            <textarea id="taskDescription" name="taskDescription"></textarea><br>
+            
+            <label for="taskDeadline">Task Deadline:</label>
+            <input type="date" id="taskDeadline" name="taskDeadline"><br>
+            
+            <input type="submit" value="Add Task">
         </form>
+        
         <table id="taskTable">
-            <!-- Task table content here -->
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Task rows will be dynamically added here -->
+            </tbody>
         </table>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Get form and table elements
+        var taskForm = document.getElementById('taskForm');
+        var taskTable = document.getElementById('taskTable');
+
+        
+        taskForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+        });
+    </script>
 </body>
 </html>
